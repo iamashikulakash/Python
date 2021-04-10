@@ -1,0 +1,35 @@
+total_cus = int(input("Enter Total Customer >>>"))
+total_cus_wait = int(input("Enter Number of Customer Wait >>>"))
+total_time_arr = int(input("Enter Total Arrival Time >>>"))
+total_ser_time = int(input("Enter Total Service Time >>>"))
+total_wait_time = int(input("Enter Total Waiting Time >>>"))
+total_run_time = int(input("Enter Total Run Time >>>"))
+total_ser_idle_time = int(input("Enter Total Service idle Time >>>"))
+total_time_sys = int(input("Enter Total System Time >>>"))
+
+
+
+#avr waiting time of customer
+avr_wait_time = total_wait_time / total_cus
+
+#The probability that a customer has to wait in the queue
+pro_of_wait = total_cus_wait / total_cus
+
+#The fraction of idle time of the server
+pro_of_idle_server = total_ser_idle_time / total_run_time
+
+#The average service time
+avr_ser_time = total_ser_time / total_cus
+
+#The average waiting time of those who actually wait in the queue
+actual_avr_wait_time = total_wait_time / total_cus_wait
+
+#The average time a customer spends in the system
+avr_time_in_sys = total_time_sys / total_cus
+
+#The average time between arrivals
+avr_time_btn_arr = (total_time_arr / (total_cus - 1))
+
+
+
+print("avr waiting time:", avr_wait_time, "probablity of waiting:", pro_of_wait, "probablity of idle server:", pro_of_idle_server, "avr service time:", avr_ser_time, "actual avr waiting:", actual_avr_wait_time, "avr time btn arrivals", avr_time_btn_arr, "avr time in system", avr_time_in_sys)
